@@ -1,0 +1,14 @@
+.input_box {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(black, grey);
+  border: 1px solid silver;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 250px;
+  height: 325px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
