@@ -9,13 +9,20 @@ export const SilverCoin = () => {
     const [total, setTotal] = useState(0);
     const [addNum, setAddNum] = useState('');
     const [price, setPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+
+
+    const averageCost = totalPrice / total;
+
 
     const handleTotalDecrease = () => {
         setTotal(total - 1)
-        setPrice()
     }
     const handleTotalIncrease = () => {
         setTotal(total + 1)
+        setPrice(prompt("enter price per coin"))
+        setTotalPrice(Number(price) + totalPrice)
     }
 
     const handleAddNum = (event) => {
@@ -34,6 +41,11 @@ export const SilverCoin = () => {
     }
 
 
+    console.log(totalPrice)
+    console.log(price)
+
+
+
 
     return (
         <div className='input_box'>
@@ -41,7 +53,7 @@ export const SilverCoin = () => {
 
             <div>
                 <div>
-                    <img src={ase} width='190'></img>
+                    <img src={ase} alt="American Silver Eagle Coin" width='190'></img>
                 </div>
                 <button onClick={handleInpuDecrease}>-</button> <input placeholder='type in amount' type='number' onChange={handleAddNum} value={addNum}></input> <button onClick={handleInputIncrease}>+</button>
             </div>
@@ -50,10 +62,10 @@ export const SilverCoin = () => {
                 total amount: {total}
             </div>
             <div>
-                total price
+                total price: ${totalPrice}
             </div>
             <div>
-                Average cost
+                Average cost: ${averageCost ? averageCost.toFixed(2) : 0}
             </div>
 
             <div>
